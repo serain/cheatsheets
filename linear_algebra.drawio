@@ -1,0 +1,133 @@
+<mxfile host="app.diagrams.net" modified="2023-11-26T17:41:10.654Z" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.0.0 Safari/537.36" etag="VEui17ZNvalkApfdC1o3" version="22.1.4" type="device">
+  <diagram name="Page-1" id="CZhxHti3bZWoKVd3RKIE">
+    <mxGraphModel dx="1194" dy="652" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="1" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-1" value="&lt;b&gt;INVERSE&lt;br&gt;&lt;/b&gt;&lt;br&gt;`(ABC)^(-1)=C^(-1)B^(-1)A^(-1)`&lt;br&gt;&lt;br&gt;&lt;b&gt;Singular (not invertible)&lt;/b&gt;&lt;br&gt;* If `Ax=0` exists with `x!=0`&lt;br&gt;* If `det(A) = 0`&lt;br&gt;&lt;br&gt;&lt;b&gt;Invertability of `nxxn`&lt;/b&gt;&lt;br&gt;* A square matrix is invertible if full rank / all columns are indie.&lt;br&gt;* The rref of `A` is `I`&lt;br&gt;* `Ax=0` has one solution.&lt;br&gt;* `Ax=b` has one solutions.&lt;br&gt;&lt;br&gt;&lt;b&gt;Gauss-Jordan&lt;br&gt;&lt;/b&gt;`(A | I) -&amp;gt; (I | A^(-1))`&lt;br&gt;This is like solving `Ax=((1),(0))` and `Ax=((0),(1))` at the same time." style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry width="229" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-2" value="&lt;b&gt;ELIMINATION&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;E matrix&lt;/b&gt;&lt;br&gt;Subtract 3 row 1 from row 2&lt;br&gt;&lt;br&gt;`E_{21} = [[1,0,0],[-3,1,0],[0,0,1]]`&lt;br&gt;&lt;br&gt;NB: Matmul is associative.&lt;br&gt;`E_{32}(E_{21}(A)) = (E_{32}E_{21})A`&lt;br&gt;&lt;br&gt;&lt;b&gt;Inverse&lt;br&gt;&lt;/b&gt;`E^(-1)E=I`" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="229" width="229" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-3" value="&lt;b&gt;PERMUTATION&lt;/b&gt;&lt;br&gt;&lt;br&gt;Exchange rows 1 and 2&lt;br&gt;&lt;br&gt;`PA=[[0,1],[1,0]]A`&lt;br&gt;&lt;br&gt;Multiplying on the left does row operations, on the right does column operations." style="rounded=0;whiteSpace=wrap;html=1;align=left;imageWidth=21;" parent="1" vertex="1">
+          <mxGeometry x="260" y="320" width="198" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-4" value="&lt;b&gt;MATMUL&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;&lt;i&gt;&lt;u&gt;Not&lt;/u&gt;&lt;/i&gt; cummutative&lt;br&gt;&lt;/b&gt;In general `AB != BA`&lt;br&gt;&lt;br&gt;&lt;b&gt;Matmul&lt;br&gt;&lt;/b&gt;`AB + AC = A(B+C)`&lt;br&gt;&lt;br&gt;`AB=C`&lt;br&gt;* Cols of `C` are combinations of cols of `A`&lt;br&gt;* Rows of `C` are combinations of rows of `B`&lt;br&gt;* `AB` is sum of (cols A)(cols B)&lt;br&gt;&lt;br&gt;&lt;b&gt;Block matmul&lt;/b&gt;&lt;br&gt;`[[A_1, A_2],[A_3,A_4]][[B_1,B_2],[B_3,B_4]] = [[A_1B_1 + A_2B_3,.],[.,.]]`" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry y="320" width="260" height="256" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-6" value="&lt;b&gt;TRANPOSE&lt;/b&gt;&lt;br&gt;&lt;br&gt;`(A^T)^T=A`&lt;br&gt;`(A+B)^T=A^T+B^T`&lt;br&gt;`(kA)^T=kA^T`&lt;br&gt;`(AB)^T=B^TA^T`&lt;br&gt;`(A^(-1))^T=(A^T)^(-1)`" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry y="576" width="229" height="154" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-7" value="&lt;b&gt;A=LU&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Without row exchanges&lt;/b&gt;&lt;br&gt;`E` is elimination, `U` is upper triangular, `L` is inverse of `E`.&lt;br&gt;&lt;br&gt;`EA=U`&lt;br&gt;`A=LU`&lt;br&gt;&lt;br&gt;&lt;b&gt;With row exchanges&lt;br&gt;&lt;/b&gt;`PA=LU`" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="229" y="576" width="229" height="175" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-8" value="&lt;b&gt;TRIANGULAR&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Invertible&lt;/b&gt;&lt;br&gt;If and only if no element on the diagonal is `0`." style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry y="730" width="229" height="97" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-9" value="&lt;b&gt;SYMMETRIC&lt;/b&gt;&lt;br&gt;&lt;br&gt;`A^T=A`&lt;br&gt;&lt;br&gt;`A^TA` is always symmetric, regardless of `A`" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="260" y="480" width="198" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-10" value="&lt;b&gt;VECTOR SPACE&lt;/b&gt;&lt;br&gt;* `v+w` and `cv` are in the space&lt;br&gt;* all combinations of `cv+dw` are in the space&lt;br&gt;* must go through origin" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="229" y="220" width="229" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-11" value="&lt;b&gt;FOUR FUNDAMENTAL SUBSPACES&lt;/b&gt;&lt;br&gt;&lt;br&gt;`A` is `mxxn`&lt;br&gt;&lt;br&gt;`C(A^T) _|_ N(A)`&lt;br&gt;`C(A) _|_ N(A^T)`&lt;br&gt;&lt;br&gt;&lt;b&gt;Column space `C(A)`&lt;/b&gt;&lt;br&gt;* All linear combinations of `C(A)`&lt;br&gt;* In `bbb R^m`&lt;br&gt;* `Ax=b` has a solution if `b` is in `C(A)`&lt;br&gt;* `dim C(A) = r`&lt;br&gt;&lt;br&gt;&lt;b&gt;Nullspace N(A^T)&lt;br&gt;&lt;/b&gt;* `dim N(A^T) = m - r`&lt;br&gt;&lt;br&gt;&lt;b&gt;Row space `C(A^T)`&lt;br&gt;&lt;/b&gt;* All combinations of rows of `A` is same as combinations of cols of `A^T`&lt;br&gt;* `dim C(A^T) = r`&lt;br&gt;* `C(A^T)&amp;nbsp; = C(A_{rref}^T)` because row operations don&#39;t change span of row space&lt;br&gt;&lt;br&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Nullspace `N(A)`&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;/b&gt;* All solutions `x` to `Ax=0`&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;* `N(A)` always contains `0`&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;* `dim N(A) = \text{# free vars} = n -r`" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="687" width="233" height="420" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-12" value="&lt;b&gt;RANK&lt;/b&gt;&lt;br&gt;&lt;br&gt;* Number of linearly independent rows or columns.&lt;br&gt;* Number of pivots in `R = \text{rref}(A)`&lt;br&gt;&lt;br&gt;If a matrix in `bbb R^n` has full rank, it spans all of `bbb R^n`.&lt;br&gt;&lt;br&gt;&lt;b&gt;Full column rank&lt;/b&gt;&lt;br&gt;* `r=n` (no free variables)&lt;br&gt;* `N(A)` is the zero vector.&lt;br&gt;* Solution `Ax=b` is `x=x_p`&lt;br&gt;* `0` or `1` solutions.&lt;br&gt;&lt;br&gt;&lt;b&gt;Full row rank&lt;/b&gt;&lt;br&gt;* `r=m`&lt;br&gt;* `Ax=b` has a solution for every `b`.&lt;br&gt;* `n-r = n-m` free variables.&lt;br&gt;&lt;br&gt;&lt;b&gt;Full rank square matrix&lt;/b&gt;&lt;br&gt;* `r=m=n`&lt;br&gt;* invertible&lt;br&gt;* `N(A)={0}`&lt;br&gt;* 1 solution" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="458" y="100" width="229" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-13" value="&lt;b&gt;SOLVE `Ax=b`&lt;/b&gt;&lt;br&gt;&lt;br&gt;* `x_{\text{particular}}`: set all free variables to `0`, solve `Ax=b` for pivots.&lt;br&gt;* `x=x_p + x_n` because `Ax_p=b` and `Ax_n=0` means `A(x_p + x_n)=b`" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="458" width="229" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-14" value="&lt;b&gt;BASIS&lt;/b&gt;&lt;br&gt;&lt;br&gt;sequence of indie vectors that span a space" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="229" y="751" width="229" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-15" value="&lt;b&gt;ORTHOGONALITY&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;b&gt;Vectors&lt;/b&gt;&lt;br&gt;`x^Ty=x*y=0`&lt;br&gt;&lt;br&gt;&lt;b&gt;Subspaces&lt;/b&gt;&lt;br&gt;Every vector in S is orthogonal to every vector in T.&lt;br&gt;&lt;br&gt;&lt;b&gt;Orthonormal&lt;br&gt;&lt;/b&gt;Orthogonal length 1.&lt;br&gt;* `Q^TQ=I` always&lt;br&gt;* `Q Q^T=I` if Q is square&lt;br&gt;* `Q^(-1)=Q^T`&lt;br&gt;&lt;br&gt;&lt;b&gt;Gram-Schmidt&lt;br&gt;&lt;/b&gt;given indie a, b, c we want orthogonal A, B, C and then orthonormal `q_1=A/norm(A)`...&lt;br&gt;`A=a`&amp;nbsp; &amp;nbsp; &amp;nbsp;`B=b-{A^Tb}/{A^TA}A`&lt;br&gt;`C=c--{A^Tb}/{A^TA}A-{B^Tc}/{B^TB}B`" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="458" y="470" width="229" height="357" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-16" value="&lt;b&gt;PROJECTIONS&lt;/b&gt;&lt;br&gt;&lt;br&gt;`A^TA\hatx=A^Tb`&lt;br&gt;`\hatx=(A^TA)^(-1)A^Tb`&lt;br&gt;`P=A(A^TA)^(-1)A^T`&lt;br&gt;`p=A\hatx=Pb`&lt;br&gt;&lt;br&gt;&lt;b&gt;Derivation&lt;/b&gt;&lt;br&gt;`a _|_e -&amp;gt; a^Te=0`&lt;br&gt;`a^T(b-p)=0`&lt;br&gt;`a^T(b-xa)=0`&lt;br&gt;`a^Tb=xa^Ta`&lt;br&gt;`x={a^Tb}/{a^Ta}`&lt;br&gt;&lt;br&gt;&lt;b&gt;Properties&lt;br&gt;&lt;/b&gt;`P^T=P` ; `P^2=P` ; `det=-1 \text{or} 1`&lt;br&gt;&lt;br&gt;&lt;b&gt;Least squares&lt;br&gt;&lt;/b&gt;Solving `Ax=b` when no solution: project `b` onto `C(A)`. Then there is a solution. This is &quot;least&quot; because orthogonality." style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="687" y="420" width="233" height="370" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-17" value="" style="endArrow=classic;html=1;rounded=0;endFill=1;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="780" y="627" as="sourcePoint" />
+            <mxPoint x="830" y="577" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-18" value="" style="endArrow=classic;html=1;rounded=0;endFill=1;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="781" y="627" as="sourcePoint" />
+            <mxPoint x="881" y="599" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-19" value="`b`" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="793" y="552" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-20" value="`a`" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="852" y="596" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-21" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="840" y="609" as="sourcePoint" />
+            <mxPoint x="830" y="579" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-22" value="`e = b-p`" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="838" y="570" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-24" value="`p=ax`" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="812" y="609" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-26" value="&lt;b&gt;DETERMINANTS&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Properties&lt;/b&gt;&lt;br&gt;* `\text{det}I=1`&lt;br&gt;* exchange rows: reverse sign of `\text{det}`.&lt;br&gt;* `[[ta,tb],[c,d]]=t[[a,b],[c,d]]` &lt;font color=&quot;#ff0000&quot;&gt;⚠ first row only&lt;/font&gt;&lt;br&gt;* `[[a+a&#39;,b+b&#39;],[c,d]] = [[a,b],[c,d]] + [[a&#39;,b&#39;],[c,d]]`&lt;br&gt;* 2 equal rows: `\text{det}=0`&lt;br&gt;* subtract `lxx\text{row 1}` from row `k`: `\text{det}` doesn&#39;t change.&lt;br&gt;* row of zeros: `\text{det}=0`&lt;br&gt;* `U=[[d_1,.,.],[0,d_2,.],[0,0,d_n]]`: `\text{det}U=d_1d_2...d_n`&lt;br&gt;* `\text{det}A=0`: singular&lt;br&gt;* `\text{det}AB=(\text{det}A)(\text{det}B)`&lt;br&gt;* `\text{det}A^T=\text{det}A`&lt;br&gt;&lt;br&gt;&lt;b&gt;Cofactors&lt;/b&gt;&lt;br&gt;`\text{det}A=a_{11}C_{11} - a_{12}C_{12} + ...`&lt;br&gt;`+` if `(i+j)` is even, else `-`&lt;br&gt;&lt;br&gt;&lt;b&gt;Inverse&lt;br&gt;&lt;/b&gt;`A^{-1}=1/{\text{det}A} C^T`&lt;br&gt;&lt;br&gt;&lt;b&gt;Cramer&#39;s rule&lt;/b&gt;&lt;br&gt;`Ax=b`&lt;br&gt;`B_j = \text{(A with col j replaced by b)`&lt;br&gt;`x_j = {\text{det}B_j}/{\text{det}A}`&lt;br&gt;&lt;br&gt;&lt;b&gt;Volume&lt;br&gt;&lt;/b&gt;`v = \text{abs(detA)}`" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="920" width="249" height="550" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-27" value="&lt;b&gt;EIGENVALUES &amp;amp; EIGENVECTORS&lt;/b&gt;&lt;br&gt;&lt;br&gt;`Ax=\lambdax`, `nxxn` matrix has `n` eigenvalues.&lt;br&gt;&lt;br&gt;&lt;b&gt;Singular&lt;/b&gt;&lt;br&gt;`\lambda=0` is an eigenvalue (nullspace)&lt;br&gt;&lt;br&gt;&lt;b&gt;Projection&lt;/b&gt;&lt;br&gt;* Any `x` in the plain `Px=x` is eigenvector with `\lambda=1`&lt;br&gt;* Any `x _|_` to plain is `Px=0` and `\lambda=0`&amp;nbsp;&lt;br&gt;&lt;br&gt;&lt;b&gt;Trace&lt;/b&gt;&lt;br&gt;Sum of eigenvalues.&lt;br&gt;&lt;br&gt;&lt;b&gt;Determinant&lt;/b&gt;&lt;br&gt;Product of eigenvalues.&lt;br&gt;&lt;br&gt;&lt;b&gt;Solve `Ax=\lambdax`&lt;br&gt;&lt;/b&gt;* Solve `\text{det}(A-\lambdaI)=0` to find `lambda`&lt;br&gt;* Plug `\lambda` and solve `(A-\lambdaI)x=0` to find eigenvectors `x`&lt;br&gt;&lt;br&gt;&lt;b&gt;`B + kI`&lt;br&gt;&lt;/b&gt;* Eigenvectors stay the same, eigenvalues are `+= k`&lt;br&gt;&lt;br&gt;`B^2`&lt;br&gt;* Same eigenvectors, square the eigenvalues&lt;br&gt;&lt;br&gt;`B^(-1)`&lt;br&gt;* Invert eigenvalues: `1/\lambda`&lt;br&gt;&lt;br&gt;`\lambda=0`&lt;br&gt;* If `\lambda=0` is an eigenvalue, `B` is singular." style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry y="827" width="229" height="563" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-28" value="&lt;b&gt;TRACE&lt;/b&gt;&lt;br&gt;Trace is the sum of diagonals. This is also the sum of eigenvalues." style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="687" y="780" width="233" height="47" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-29" value="&lt;b&gt;DIAGONALIZING&lt;/b&gt;&lt;br&gt;&lt;br&gt;`A=X\LambdaX^(-1)`&lt;br&gt;&lt;br&gt;`X`: Eigenvector matrix&lt;br&gt;`\Lambda`: diagonal eigenvalue matrix.&lt;br&gt;&lt;br&gt;&lt;b&gt;Powers&lt;/b&gt;&lt;br&gt;`A^k=X\Lambda^kX^(-1)`&lt;br&gt;&lt;br&gt;&lt;b&gt;Diagonizability&lt;br&gt;&lt;/b&gt;Any matrix with no repeated `\lambda` is diagonizable.&lt;br&gt;&lt;br&gt;&lt;b&gt;Symmetric&lt;br&gt;&lt;/b&gt;Diagonalizable if symmetric." style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="920" y="551" width="249" height="229" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-31" value="&lt;b&gt;MARKOV MATRIX&lt;/b&gt;&lt;br&gt;&lt;br&gt;Rows sum to `1` and all entries `&amp;gt;=0`&lt;br&gt;&lt;br&gt;`\lambda_1=1` always. `|\lambda_i|&amp;lt;1` always.&lt;br&gt;&lt;br&gt;The trace/determinant is a factor of eigenvalues, so for a `2x2` we can work out other eigenvalue easily.&lt;br&gt;&lt;br&gt;&lt;b&gt;Steady state&lt;/b&gt;&lt;br&gt;Vector `x_1=vec 1` connected to `\lambda_1`.&lt;br&gt;`u_k=A^ku_0=c_1\lambda_1^kx_1+c_2\lambda_2^k_2...`&lt;br&gt;`=c_1x_1`&lt;br&gt;&lt;b&gt;&lt;br&gt;&lt;/b&gt;`A^T` same eigenvalues as `A` because `det(A-\lambdaI)=det(A^T-\lambdaI)=0`" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry y="1390" width="229" height="264" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-32" value="&lt;b&gt;DIFFERENTIAL EQUATIONS&lt;/b&gt;&lt;br&gt;&lt;br&gt;`(e^(\lambdat))&#39; = \lambdae^(\lambdat)`&lt;br&gt;`(du)/(dt)=Au`&lt;br&gt;&lt;br&gt;A is constant `-&amp;gt;` `(du)/(dt)=Au` is linear with constant coefficients.&lt;br&gt;&lt;br&gt;&lt;b&gt;Solution&lt;/b&gt;&lt;br&gt;Choose `u=e^(\lambdat)x`, when `Ax=\lambdax`&lt;br&gt;`=&amp;gt; (du)/(dt)=\lambdae^(\lambdat)x=Ae^(\lambdat)x=Au`.&lt;br&gt;&lt;br&gt;We want to find `u(t)` s.t. `(du)/(dt)=Au`, if we can do that we can easily find `u(t)` for any `t`.&lt;br&gt;&lt;br&gt;1) Find the eigenvalues&lt;br&gt;2) Find the eigenvectors&lt;br&gt;3) Write `u(0)` as a combination of `c_1x_1+c_2x_2...`&lt;br&gt;4) `u(t)=c_1e^(\lambda_1t)x_1 + c_2e^(\lambda_2t)x_2...`&lt;br&gt;&lt;br&gt;&lt;b&gt;Second order equations&lt;br&gt;&lt;/b&gt;`my&#39;&#39;+by&#39;+ky=0`&lt;br&gt;`(dy)/(dt)=y&#39;`&lt;br&gt;`(dy&#39;)/(dt)=-ky-by&#39;`&lt;br&gt;`=&amp;gt; d/(dt)=[[0,1],[-k,-b]][[y],[y&#39;]]=Au`&lt;br&gt;&lt;br&gt;&lt;b&gt;Stability&lt;/b&gt;&lt;br&gt;`u(t)-&amp;gt;0` when `Re(\lambda)&amp;lt;0`&lt;br&gt;A is &quot;stable&quot; and `u(t)-&amp;gt;0` when all `\lambda` have negative real parts.&lt;br&gt;&lt;br&gt;&lt;b&gt;Exponential of a matrix&lt;/b&gt;&lt;br&gt;`e^(At)=I+At+1/2(At)^2...=Ae^(At)`&lt;br&gt;`e^(At)=Xe^(\Lambdat)X^(-1)`&lt;br&gt;`e^(At)` has the same eigenvectors as `A`." style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="229" y="827" width="229" height="683" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-33" value="&lt;b&gt;PROJECTIONS ORTHONORMAL BASIS&lt;/b&gt;&lt;br&gt;&lt;br&gt;&quot;expanding the vector in the basis&quot;&lt;br&gt;&lt;br&gt;because orthonormal: `q_1^Tv=x_1q_1^Tq_1+x_2q_1^Tq_2...=x_1`&lt;br&gt;`Qx=v =&amp;gt; x=Q^Tv`&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="229" y="1510" width="229" height="144" as="geometry" />
+        </mxCell>
+        <mxCell id="o0Mzq_Nm_ivGwsUZUon7-34" value="&lt;b&gt;FOURIER SERIES&lt;/b&gt;&lt;br&gt;&lt;br&gt;`f(x)=a_0*1+a_1cosx+b_1sinx`&lt;br&gt;`+a_2cos2x+b_2sin2x...`&lt;br&gt;infinitely many `f(x)` because it&#39;s a function `=&amp;gt;` infinite basis (`1`,`cosx`,`sinx`...)&lt;br&gt;&lt;br&gt;the infinitely many basis are orthogonal&lt;br&gt;&lt;br&gt;&lt;b&gt;Dot/inner product of functions&lt;br&gt;&lt;/b&gt;`v^Tw=v_1w_1...+v_nw_n`&lt;br&gt;`f^Tg=int_0^(2pi)f(x)g(x)dx=0`&lt;br&gt;if orthonormal&lt;br&gt;&lt;br&gt;&lt;b&gt;Find `a_1`&lt;br&gt;&lt;/b&gt;Inner product of `cosx` with `f(x)`:&lt;br&gt;`int_0^(2pi) f(x)cosxdx=a_1 +` (a lot of zeros)" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="458" y="827" width="232" height="333" as="geometry" />
+        </mxCell>
+        <mxCell id="geT2t-EL16y8GfKyIWQK-1" value="&lt;b&gt;SYMMETRIC&lt;/b&gt;&lt;br&gt;&lt;br&gt;`A=A^T`&lt;br&gt;eigenvalues of real symmetric matrix are real; eigenvectors of a symmetric matrix are orthogonal.&lt;br&gt;&lt;br&gt;&lt;b&gt;Spectral theorem&lt;br&gt;&lt;/b&gt;`A=Q\LambdaQ^(-1)=Q\LambdaQ^T=\lambda_1q_1q_1^T+...`&lt;br&gt;&lt;br&gt;&lt;b&gt;Signs&lt;br&gt;&lt;/b&gt;`# \text{positive pivots}=#\text{positive}lambda&#39;s`&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="690" y="827" width="233" height="203" as="geometry" />
+        </mxCell>
+        <mxCell id="geT2t-EL16y8GfKyIWQK-2" value="&lt;b&gt;FFT&lt;br&gt;&lt;/b&gt;&lt;br&gt;Multiplying `nxxn` is `n^2`; FFT `-&amp;gt; nlog_n`&lt;br&gt;&lt;br&gt;&lt;b&gt;Complex numbers&lt;br&gt;&lt;/b&gt;length given by `\barz^Tz=z^Hz`&lt;br&gt;symmetry: `A^H=A`&lt;br&gt;perpendicular: `\barQ^TQ=I=Q^HQ`&lt;br&gt;&lt;br&gt;&lt;b&gt;Fourier matrix&lt;br&gt;&lt;/b&gt;`F_n=`&lt;br&gt;`[[1,1,1,.,1],[1,w,w^2,.,w^(n-1)],[.,.,.,.,.],[1,w^(n-1),w^2(n-1)&lt;br&gt;,.,w^(n-1)^2]]`&lt;br&gt;&lt;br&gt;`(F_n)_(ij)=w^(ij)`&lt;br&gt;&lt;br&gt;`w^n=1` ; `w=exp(i(2pi)/n)`&lt;br&gt;&lt;br&gt;`F_64=[[I,D],[I,-D]][[F_32,0],[0,F_32]]P`&lt;br&gt;`P`: separates between even and odd components, interlaces.&lt;br&gt;`D`: `[[1,0,0,...],[0,w,0,...],[0,0,w^2,...]]`" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="458" y="1160" width="232" height="494" as="geometry" />
+        </mxCell>
+        <mxCell id="geT2t-EL16y8GfKyIWQK-5" value="&lt;b&gt;POSITIVE DEFINITE MATRICES&lt;/b&gt;&lt;br&gt;&lt;font color=&quot;#ff0000&quot;&gt;⚠symmetric&lt;br&gt;&lt;/font&gt;&lt;br&gt;Positive definite if (any sufficient):&lt;br&gt;* all `\lambda_i&amp;gt;0`&lt;br&gt;* `a&amp;gt;0` ; `ac-b^2&amp;gt;0`&lt;br&gt;* pivots `a &amp;gt; 0` ; `(ac-b^2)a&amp;gt;0`&lt;br&gt;* `x^TAx&amp;gt;0`&lt;br&gt;&lt;br&gt;Semi-definite allows `\lambda_i=0`&lt;br&gt;&lt;br&gt;&lt;b style=&quot;border-color: var(--border-color);&quot;&gt;Second derivative matrix&lt;br style=&quot;border-color: var(--border-color);&quot;&gt;&lt;/b&gt;* 1st derivative = 0: extrema&lt;br&gt;* 2nd derivative &amp;gt; 0: goes up so minimum&lt;br&gt;If the matrix of 2nd derivatives is pos def then the function has a global minimum.&lt;br&gt;&lt;b&gt;&lt;br&gt;`A^TA` &lt;/b&gt;is positive definite if cols are indie (else semi-definite)" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="690" y="1030" width="233" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="geT2t-EL16y8GfKyIWQK-6" value="&lt;b&gt;SIMILAR MATRICES&lt;/b&gt;&lt;br&gt;&lt;br&gt;A, B similar if for some matrix `M`:&lt;br&gt;`B=M^(-1)AM`&lt;br&gt;&lt;br&gt;They have same eigenvalues (not same eigenvectors, but same number of eigenvectors)&lt;br&gt;&lt;br&gt;e.g. `S^(-1)AS=\Lambda` - `A` and `\Lambda` are similar." style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="690" y="1310" width="233" height="148" as="geometry" />
+        </mxCell>
+        <mxCell id="geT2t-EL16y8GfKyIWQK-7" value="&lt;b&gt;JORDAN BLOCK&lt;/b&gt;&lt;br&gt;&lt;br&gt;`J_i = [[\lambda_i, 1, ., .],[.,\lambda_i&lt;br&gt;,1, .],[.,.,.,\lambda_i]]`&lt;br&gt;&lt;br&gt;good case: `J` is `\Lambda`&lt;br&gt;&lt;br&gt;&lt;b&gt;Jordan theorem&lt;/b&gt;&lt;br&gt;square A is similar to a Jordan matrix `J=[[J_1,.],[.,J_2]]` with #blocks=#eigenvecs" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="690" y="1458" width="233" height="196" as="geometry" />
+        </mxCell>
+        <mxCell id="geT2t-EL16y8GfKyIWQK-9" value="&lt;b&gt;SINGULAR VALUE DECOMPOSITION&lt;/b&gt;&lt;br&gt;&lt;br&gt;`A=U\SigmaV^T`&lt;br&gt;for any matrix!&lt;br&gt;&lt;br&gt;`A^TA=V\Sigma^TU^TU\SigmaV^T=V\Sigma^2V^T`&lt;br&gt;`V`: eigenvectors, `\Sigma^2`: eigenvalues (positive)&lt;br&gt;&lt;br&gt;Then use `A A^T=U\Sigma^2U^T`&lt;br&gt;&lt;br&gt;* `v_1...v_r` orthonormal basis for rowspace&lt;br&gt;* `u_1...u_r` &quot; &quot; for column space&lt;br&gt;* `v_(r+1)...v_n` &quot; &quot; for nullspace&lt;br&gt;* `u_(r+1)...u_m` &quot; &quot; `N(A^T)`" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="923" y="827" width="246" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="geT2t-EL16y8GfKyIWQK-10" value="&lt;b&gt;TRANSFORMATIONS&lt;/b&gt;&lt;br&gt;&lt;br&gt;`T(v+w)=T(v)+T(w)`&lt;br&gt;`T(cv)=cT(v)`&lt;br&gt;&lt;br&gt;&lt;b&gt;Basis&lt;/b&gt;&lt;br&gt;if we know `T(v_i)` for all vecs in basis, we know everything about the transformation&lt;br&gt;`T(v)=c_1T(v_1)+...`&lt;br&gt;&lt;br&gt;&lt;b&gt;Matrix `A`&lt;br&gt;&lt;/b&gt;want a matrix A that tells us `T:bbb R^n-&amp;gt;bbb R^m`&lt;br&gt;* choose input basis `bbb R^n` and output basis `bbb R^m`&lt;br&gt;* `i^{th}` col of `A`: `T(v_i)=a_{1i}w_1+...+a_{mi}w_m`" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="923" y="1057" width="246" height="229" as="geometry" />
+        </mxCell>
+        <mxCell id="78SkrRkv9qz1mxpgrzKB-1" value="&lt;b&gt;LEFT AND RIGHT INVERSES&lt;/b&gt;&lt;br&gt;&lt;br&gt;&lt;b&gt;Left inverse&lt;/b&gt;&lt;br&gt;Full column rank `r=n` and `N(A)={0}`&lt;br&gt;`0` or `1` solutions to `Ax=b`&lt;br&gt;`A^TA` is `nxxn` and full rank, invertible, so&lt;br&gt;`(A^TA)^{-1}A^TA=BA=I` and `B` is left inverse&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="923" y="1286" width="246" height="229" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
